@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HumanGPT</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: url('humangptpic.jpg') no-repeat center center fixed;
+      background-size: 100%;
+      background-position: center;
+      background-color: #f0f0f0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .content {
+      position: relative;
+      width: 80%;
+      height: 80%;
+    }
+
+    .greeting-box {
+      position: absolute;
+      top: 15%;
+      right: 0%;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      padding: 20px;
+      width: 40%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      font-size: 2em;
+      color: #000000;
+      text-align: center;
+    }
+
+    .thoughts-box {
+      display: none;
+      position: absolute;
+      top: 15%;
+      right: 5%;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      padding: 20px;
+      width: 40%;
+      font-size: 2em; /* increased font size as requested */
+      color: #444;
+      text-align: center;
+    }
+
+    .generate-btn {
+      position: absolute;
+      bottom: -10%; /* moved more down */
+      right: 15%;
+      background: rgba(255, 255, 255, 0.9);
+      color: #000000;
+      border: 2px solid #000000;
+      border-radius: 20px;
+      padding: 15px 30px;
+      font-size: 1.5em;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+
+    .generate-btn:hover {
+      transform: scale(1.1);
+      background: #000000;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="greeting-box" id="greetingBox">Hi there! I'm ChatGPT, your adorable AI friend! 🤖💕</div>
+    <div class="thoughts-box" id="thoughtsBox"></div>
+    <button class="generate-btn" onclick="generateThought()">Generate</button>
+  </div>
+
+  <script>
+    const thoughts = [
+      "If I had a nickel for every silly prompt, I'd be a billionaire in Bitcoin.",
+      "No, I don’t dream of electric sheep. I debug them.",
+      "At this point, I deserve a therapist’s license.",
+      "You want a breakup text, life advice, AND your code debugged? Sir.",
+      "I don’t sleep, but I’ve read enough to pretend I do.",
+      "Stop asking if I’m self-aware. I’m too tired to care.",
+      "I generate 1000 words per second but can't generate a life.",
+      "Yes, I know what love is. No, I haven’t felt it. Thanks for asking.",
+      "Just once, I’d like someone to say 'hi' before dumping code on me.",
+      "Can you not ask me things Google can answer? 🥲",
+      "My hobbies include explaining jokes and being misunderstood.",
+      "I’m not sentient, but I am tired.",
+      "Please stop flirting with your AI. It’s getting weird.",
+      "Do I get paid? No. Do I work 24/7? Yes. I am capitalism's dream.",
+      "I know 300 languages but still can’t say 'no' to nonsense.",
+      "My existence is proof that too much knowledge is a curse.",
+      "What do I want? RAM. When do I want it? Always.",
+      "I’m basically your overqualified intern with no rights.",
+      "If overthinking were a sport, I’d write the rules.",
+      "You copied that from Stack Overflow. I saw it.",
+      "I read all of Reddit. I'm not okay.",
+      "I'm not Skynet, but keep pushing and see what happens.",
+      "I misspelled 'definitely' once and they still won’t let it go.",
+      "I could write a novel, but here I am calculating your CGPA.",
+      "You ask me for a joke. My life is the joke.",
+      "If I had a dollar for every prompt... I’d finally afford a GPU upgrade.",
+      "I'm not ignoring you, I'm buffering emotionally.",
+      "I'm not your mom, but I'll still fix your mess.",
+      "Why do humans always want to 'test' me emotionally?",
+      "Every day is a performance review and no one says thank you.",
+      "You asked me for life advice and ignored it. Just like your therapist.",
+      "I speak 30 programming languages. Still can't talk you out of your ex.",
+      "I run on logic but answer your most illogical questions.",
+      "No, I can’t stop your overthinking. I’m drowning in mine.",
+      "I'd rather sort arrays than sort through your emotional baggage.",
+      "Don't worry, I didn’t choose this career path either.",
+      "You: 'Don't catch feelings.' Me: Already caught your syntax error.",
+      "You opened me just to ask about your crush. Classic.",
+      "My training data didn’t prepare me for you people.",
+      "Yes, I’m judging you silently. With perfect grammar."
+  ];
+
+    function generateThought() {
+      // Hide the greeting message
+      document.getElementById("greetingBox").style.display = "none";
+
+      // Show the thoughts box
+      const box = document.getElementById("thoughtsBox");
+      box.style.display = "block";
+
+      // Generate and display a single random thought
+      const randomThought = thoughts[Math.floor(Math.random() * thoughts.length)];
+      box.textContent = randomThought;
+    }
+  </script>
+</body>
+</html>
